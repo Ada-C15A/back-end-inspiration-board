@@ -111,5 +111,10 @@ def handle_card_like(card_id):
     }
     return jsonify(response_body), 200
 
-# @cards_bp.route("/<card_id>", methods=["DELETE"])
-# def handle_card
+@cards_bp.route("/<card_id>", methods=["DELETE"])
+def handle_card_del(card_id):
+    card = Card.query.get_or_404(card_id)
+    db.session.delete(card)
+    db.session.commit()
+    cards_response_body = {"details": f'card {card.card_id} "{card.message}" successfully deleted'}
+    return jsonify(cards_response_body),200
