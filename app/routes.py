@@ -3,7 +3,6 @@ from app import db
 from dotenv import load_dotenv
 from app.models.card import Card
 from app.models.board import Board
-import os
 
 load_dotenv()
 
