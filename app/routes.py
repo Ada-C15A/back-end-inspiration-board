@@ -12,9 +12,7 @@ boards_bp = Blueprint('boards', __name__)
 
 @boards_bp.route('/')
 def root():
-    return {
-        "name":"mango-mania"
-    }
+    return ('''<h1>Mango Mania</h1>''')
 
 @boards_bp.route('/boards', methods=["GET", "POST"], strict_slashes = False)
 def handle_boards():
